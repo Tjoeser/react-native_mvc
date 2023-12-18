@@ -87,7 +87,7 @@ const ReadNounView = () => {
           visible={visible}
           onDismiss={onDismissSnackBar}
           action={{label: 'Yes', onPress: () => {
-            dispatch({ type: 'DELETENOUN', payload: nounsState.noun.id });
+            dispatch({ type: 'DELETENOUN', payload: nounsState.noun });
             navigation.navigate('ListNounsView');
           },}}>
           Do You Want To Delete This Noun?

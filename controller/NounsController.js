@@ -32,7 +32,7 @@ export const NounsController = ({ children }) => {
   };
   const collectDeleteNoun = (id, nouns) => {
     const result = deleteNoun(id, nouns);
-    // console.log('collectDeleteNoun', result);
+    console.log('collectDeleteNoun', result);
     return result;
   };
   const collectListNounsView = () => {
@@ -69,7 +69,6 @@ export const NounsController = ({ children }) => {
         };
       case 'READNOUN':
         // console.log('READNOUNtriggered', action);
-        // Handle read action
         read = collectReadNoun(action.id, nounsState.nouns);
         // Navigeer naar het specifieke scherm
         navigation.navigate('ReadNounView');
@@ -100,17 +99,15 @@ export const NounsController = ({ children }) => {
           };
         }
       case 'DELETENOUN':
-        console.log('DELETENOUN triggered', action);
         // Handle delete action
-        const nounToDelete = action.payload;
-        const updatedNouns = nounsState.nouns.filter(noun => noun.id !== nounToDelete.id);
-        console.log('DELETENOUN updatedNouns', updatedNouns, 'nounToDelete', nounToDelete);
+        const id = action.payload.id;
+        deleete = collectDeleteNoun(id, nounsState.nouns);
+        console.log('DELETENOUN updatedNouns', deleete);
         // Navigeer naar het specifieke scherm (Navigate to the specific screen)
         navigation.navigate('ListNounsView');
-
         return {
           ...nounsState,
-          nouns: updatedNouns,
+          nouns: deleete,
           currentScreen: 'ListNounsView',
           message: 'Noun deleted successfully',
         };
