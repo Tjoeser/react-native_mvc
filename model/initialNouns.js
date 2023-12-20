@@ -9,13 +9,13 @@ export const initialNouns = {
     },
     {
       id: 2,
-      name: 'Tom Cruise',
+      name: 'Tom Cruise.',
       bornAt: 'Syracuse, NY',
       photo: 'https://jsonformatter.org/img/tom-cruise.jpg',
     },
     {
       id: 3,
-      name: 'Morris Kushwaha',
+      name: 'Morris Kushwaha.',
       bornAt: 'New Delhi City, IN',
       photo:
         'https://androidwave.com/wp-content/uploads/2021/02/android-wave.jpeg',
@@ -29,14 +29,14 @@ export const initialNouns = {
     },
     {
       id: 5,
-      name: 'Will Smith',
+      name: 'Will Smith.',
       bornAt: 'New York City, NY',
       photo:
         'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSaQqg3yvv1Kv3KA2XtPu4T1p4z3j6Ubk-XRzoT5FUJIdkh4RWX6JfMM7Jc&s=0',
     },
     {
       id: 6,
-      name: 'Leonardo DiCaprio',
+      name: 'Leonardo DiCaprio.',
       bornAt: 'New York City, NY',
       photo:
         'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRYZRJI2Hr7MTGsc33GZVm_f0ZLyZiCvHhQk8ojXZxt84pmdzZnHnt5kdld&s=0',
@@ -47,6 +47,18 @@ export const initialNouns = {
       bornAt: 'New York City, NY',
       photo: 'https://jsonformatter.org/img/Robert-Downey-Jr.jpg',
     },
+    {
+      id: 8,
+      name: 'Robert Downey Jr.',
+      bornAt: 'New York City, NY',
+      photo: 'https://jsonformatter.org/img/Robert-Downey-Jr.jpg',
+    },
+    {
+      id: 9,
+      name: 'Will Smith.    ',
+      bornAt: 'New York City, NY',
+      photo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSaQqg3yvv1Kv3KA2XtPu4T1p4z3j6Ubk-XRzoT5FUJIdkh4RWX6JfMM7Jc&s=0',
+    }
   ],
   id: '',
   name: '',

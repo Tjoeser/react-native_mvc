@@ -20,20 +20,14 @@ const NounsList = () => {
     return (
       <View style={styles.listcontainer}>
         <Image style={styles.listlead} source={{ uri: photo }} />
-        <View style={styles.listtextcontainer}>
-          <Text style={styles.listhead}>{name}</Text>
-          <Text style={styles.listtext}>
+          <View style={styles.listtextcontainer}>
+            <Text style={styles.listhead}>{name}</Text>
+            <Text style={styles.listtext}>
             {bornAt} {id}
-          </Text>
+            </Text>
+          </View>
+          <IconButton text="READ" iconName="pencil" onPress={() => dispatch({ type: 'READNOUN', id: id })}></IconButton>
         </View>
-        <TouchableOpacity
-          style={styles.button}
-          onPress={() => dispatch({ type: 'READNOUN', id: id })}
-          // onPress={() => navigation.navigate("ReadScreen", { item })}
-        >
-          <Image style={styles.listtrail} source={{ uri: photo }} />
-        </TouchableOpacity>
-      </View>
     );
   };
 

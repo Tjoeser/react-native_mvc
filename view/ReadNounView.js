@@ -16,25 +16,20 @@ import { useNounsContext } from '../controller/NounsController';
 import { useNavigation } from '@react-navigation/native';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import { Snackbar } from 'react-native-paper';
+import IconButton from './components/iconbutton';
 
 const ReadNounView = () => {
   const { dispatch, nounsState } = useNounsContext();
   const navigation = useNavigation();
+  
 
-  const IconButton = ({ text, iconName, onPress }) => {
-    return (
-      <TouchableOpacity style={s.button} onPress={onPress}>
-        <Icon name={iconName} style={s.icon} />
-        <Text style={styles.buttonText}>{text}</Text>
-      </TouchableOpacity>
-    );
-  };
+
 
   const IconTextButton = ({ text, iconName, onPress }) => {
     return (
-      <TouchableOpacity style={[s.button, s.flexrow]} onPress={onPress}>
-        <Icon name={iconName} style={s.icon} />
-        <Text style={s.buttonText}>{text}</Text>
+      <TouchableOpacity style={[styles.button, styles.flexrow]} onPress={onPress}>
+        <Icon name={iconName} style={styles.icon} />
+        <Text style={styles.buttonText}>{text}</Text>
       </TouchableOpacity>
     );
   };
@@ -47,27 +42,27 @@ const ReadNounView = () => {
 
   return (
 
-    <SafeAreaView style={s.safeArea}>
+    <SafeAreaView style={styles.safeArea}>
       <StatusBar translucent backgroundColor="transparent" />
-      <View style={s.cardWrapper}>
-        <View style={s.card}>
-          <View style={s.imageWrapper}>
+      <View style={styles.cardWrapper}>
+        <View style={styles.card}>
+          <View style={styles.imageWrapper}>
             <Background
               fromColor="#000000"
               toColor="#FFFFFF00"
               opacityColor1={0}>
               <Image
-                style={s.cardImage}
+                style={styles.cardImage}
                 source={{ uri: nounsState.noun.photo }}
               />
             </Background>
           </View>
-          <View style={s.cardContent}>
-            <View style={[s.flexrow, s.spacebetween]}>
-              <View style={s.headWrapper}>
-                <Text style={s.h3}>{nounsState.noun.name}</Text>
+          <View style={styles.cardContent}>
+            <View style={[styles.flexrow, styles.spacebetween]}>
+              <View style={styles.headWrapper}>
+                <Text style={styles.h3}>{nounsState.noun.name}</Text>
               </View>
-              <View style={s.flexrow}>
+              <View style={styles.flexrow}>
                 <IconButton
                   text="Update"
                   iconName="pencil"
@@ -75,7 +70,7 @@ const ReadNounView = () => {
                     dispatch({ type: 'UPDATENOUN', payload: nounsState.noun })
                   }
                 />
-                <IconTextButton text="Delete" iconName="trash" onPress={onToggleSnackBar}>{visible ? 'Hide' : 'Show'}</IconTextButton>
+                <IconButton text="Delete" iconName="trash" onPress={onToggleSnackBar}>{visible ? 'Hide' : 'Show'}</IconButton>
               </View>
             </View>
             <Text>
@@ -97,87 +92,4 @@ const ReadNounView = () => {
   );
 };
 
-const s = StyleSheet.create({
-  safeArea: {
-    flex: 1,
-  },
-  cardWrapper: {
-    listStyle: 'none',
-    padding: 0,
-    margin: 0,
-    display: 'flex',
-    flexWrap: 'wrap',
-    justifyContent: 'space-between',
-    gap: 20,
-  },
-  card: {
-    backgroundColor: '#fff',
-    borderRadius: 8,
-    shadowColor: '#000',
-    shadowOffset: {
-      width: 0,
-      height: 2,
-    },
-    shadowOpacity: 0.23,
-    shadowRadius: 2.62,
-    elevation: 4,
-    paddingBottom: 16,
-    minHeight: 500,
-  },
-  h3: {
-    fontSize: 20,
-  },
-  cardImage: {
-    // borderRadius: 8,
-    width: '100%',
-    aspectRatio: 4 / 3,
-    objectFit: 'cover',
-    mixBlendMode: 'overlay',
-    // height: 200,
-  },
-  cardContent: {
-    margin: 16,
-    maxWidth: '100%',
-  },
-  headWrapper: {
-    width: 0,
-    flexGrow: 1,
-    flex: 1,
-  },
-  imageWrapper: {
-    width: '100%',
-    aspectRatio: 4 / 3,
-    maxHeight: 320,
-    backgroundImage: 'linear-gradient( #FFFFFF00, #FFF 30vh )',
-  },
-  spacebetween: {
-    justifyContent: 'space-between',
-  },
-  button: {
-    backgroundColor: '#E8DEF8',
-    alignItems: 'center',
-    justifyContent: 'center',
-    // width: 48,
-    height: 40,
-    borderRadius: 48,
-    // lineHeight: 24,
-    padding: 12,
-    margin: 2,
-  },
-  buttonText: {
-    // color: lite,
-    paddingLeft: 4,
-    fontWeight: 'bold',
-    fontSize: 12,
-  },
-  icon: {
-    color: 'black',
-    fontSize: 16,
-  },
-  flexrow: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
 export default ReadNounView;

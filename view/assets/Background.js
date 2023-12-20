@@ -23,8 +23,7 @@ const Background = ({
       <View
         style={[
           StyleSheet.absoluteFillObject,
-          { height, zIndex: 10 },
-          otherViewProps.style,
+          { height, zIndex: 10 }
         ]}
         {...otherViewProps}>
         <Svg height="100%" width="100%" style={StyleSheet.absoluteFillObject}>
