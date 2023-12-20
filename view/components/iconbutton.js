@@ -13,7 +13,7 @@ import Icon from 'react-native-vector-icons/FontAwesome';
 
 export default IconButton = ({ text, iconName, onPress, style}) => {
     return (
-      <TouchableOpacity style={styles.button} onPress={onPress}>
+      <TouchableOpacity style={styles.rightButton} onPress={onPress}>
         <Icon name={iconName} style={styles.icon} />
         <Text style={styles.buttonText}>{text}</Text>
       </TouchableOpacity>

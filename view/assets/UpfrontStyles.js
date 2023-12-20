@@ -52,9 +52,9 @@ const UpfrontStyles = StyleSheet.create({
   rightButton: {
     justifyContent: 'flex-end',
     backgroundColor: primary,
-    padding: 10,
-    marginHorizontal: 2,
-    marginVertical: 2,
+    // padding: 10,
+    // marginHorizontal: 2,
+    // marginVertical: 2,
     alignItems: 'center',
     borderRadius: 5,
     width: moderateScale(96),
@@ -189,16 +189,16 @@ const UpfrontStyles = StyleSheet.create({
     display: 'flex',
     flexDirection: 'row',
   },
-  rightbutton: {
-    justifyContent: 'flex-end',
-    backgroundColor: primary,
-    padding: 10,
-    marginHorizontal: 2,
-    marginVertical: 2,
-    alignItems: "center",
-    borderRadius: 5,
-    width: moderateScale(96),
-  },
+  // rightbutton: {
+  //   justifyContent: 'flex-end',
+  //   backgroundColor: primary,
+  //   padding: 10,
+  //   marginHorizontal: 2,
+  //   marginVertical: 2,
+  //   alignItems: "center",
+  //   borderRadius: 5,
+  //   width: moderateScale(96),
+  // },
 });
 
 export default UpfrontStyles;
