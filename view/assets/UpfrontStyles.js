@@ -52,9 +52,6 @@ const UpfrontStyles = StyleSheet.create({
   rightButton: {
     justifyContent: 'flex-end',
     backgroundColor: primary,
-    // padding: 10,
-    // marginHorizontal: 2,
-    // marginVertical: 2,
     alignItems: 'center',
     borderRadius: 5,
     width: moderateScale(96),
@@ -130,6 +127,7 @@ const UpfrontStyles = StyleSheet.create({
     flex: 1,
   },
   cardWrapper: {
+
     listStyle: 'none',
     padding: 0,
     margin: 0,
@@ -139,7 +137,7 @@ const UpfrontStyles = StyleSheet.create({
     gap: 20,
   },
   card: {
-    height: '100%',
+
     backgroundColor: '#fff',
     borderRadius: 8,
     shadowColor: '#000',
@@ -162,11 +160,11 @@ const UpfrontStyles = StyleSheet.create({
     // height: 200,
   },
   cardContent: {
-    top: "0%",
     margin: 16,
     maxWidth: '100%',
   },
   headWrapper: {
+    top: '30%',
     width: 0,
     flexGrow: 1,
     flex: 1,
@@ -189,16 +187,17 @@ const UpfrontStyles = StyleSheet.create({
     display: 'flex',
     flexDirection: 'row',
   },
-  // rightbutton: {
-  //   justifyContent: 'flex-end',
-  //   backgroundColor: primary,
-  //   padding: 10,
-  //   marginHorizontal: 2,
-  //   marginVertical: 2,
-  //   alignItems: "center",
-  //   borderRadius: 5,
-  //   width: moderateScale(96),
-  // },
+  downButton: {
+    justifyContent: 'flex-end',
+    backgroundColor: primary,
+    color: "white",
+    alignItems: 'center',
+    borderRadius: 5,
+    top: 100,
+    marginBottom: 10,
+    width: moderateScale(96),
+    alignSelf: 'flex-end', // Align the button to the right
+  }
 });
 
 export default UpfrontStyles;

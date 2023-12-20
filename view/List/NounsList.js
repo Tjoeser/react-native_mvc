@@ -18,18 +18,18 @@ const NounsList = () => {
   const Item = (item) => {
     const { id, name, bornAt, photo } = item;
     return (
-      <View>
       <View style={styles.listcontainer}>
         <Image style={styles.listlead} source={{ uri: photo }} />
-          <View style={styles.listtextcontainer}>
-            <Text style={styles.listhead}>{name}</Text>
-            <Text style={styles.listtext}>
+        <View style={styles.listtextcontainer}>
+          <Text style={styles.listhead}>{name}</Text>
+          <Text style={styles.listtext}>
             {bornAt} {id}
-            </Text>
-          </View>
+          </Text>
         </View>
-        <IconButton style={styles.rightButton} text="READ" iconName="search" onPress={() => dispatch({ type: 'READNOUN', id: id })}></IconButton>
+        <View style={styles.rightButtonContainer}>
+          <IconButton style={styles.rightButton} text="READ" iconName="search" onPress={() => dispatch({ type: 'READNOUN', id: id })}></IconButton>
         </View>
+      </View>
     );
   };
 

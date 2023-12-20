@@ -21,7 +21,7 @@ import IconButton from './components/iconbutton';
 const ReadNounView = () => {
   const { dispatch, nounsState } = useNounsContext();
   const navigation = useNavigation();
-  
+
 
 
 
@@ -62,15 +62,15 @@ const ReadNounView = () => {
               <View style={styles.headWrapper}>
                 <Text style={styles.h3}>{nounsState.noun.name}</Text>
               </View>
-              <View style={styles.flexrow}>
-                <IconButton
-                  text="Update"
-                  iconName="pencil"
-                  onPress={() =>
-                    dispatch({ type: 'UPDATENOUN', payload: nounsState.noun })
-                  }
-                />
-                <IconButton text="Delete" iconName="trash" onPress={onToggleSnackBar}>{visible ? 'Hide' : 'Show'}</IconButton>
+              <View>
+                <TouchableOpacity style={styles.downButton} onPress={() => dispatch({ type: 'UPDATENOUN', payload: nounsState.noun })}>
+                  <Icon name="pencil" style={styles.icon} />
+                  <Text>Update</Text>
+                </TouchableOpacity>
+                <TouchableOpacity style={styles.downButton} onPress={onToggleSnackBar}>
+                  <Icon name="trash" style={styles.icon} />
+                  <Text>Delete</Text>
+                </TouchableOpacity>
               </View>
             </View>
             <Text>
@@ -78,16 +78,18 @@ const ReadNounView = () => {
             </Text>
           </View>
         </View>
-        <Snackbar
-          visible={visible}
-          onDismiss={onDismissSnackBar}
-          action={{label: 'Yes', onPress: () => {
+      </View>
+      <Snackbar
+        visible={visible}
+        onDismiss={onDismissSnackBar}
+        action={{
+          label: 'Yes', onPress: () => {
             dispatch({ type: 'DELETENOUN', payload: nounsState.noun });
             navigation.navigate('ListNounsView');
-          },}}>
-          Do You Want To Delete This Noun?
-        </Snackbar>
-      </View>
+          },
+        }}>
+        Do You Want To Delete This Noun?
+      </Snackbar>
     </SafeAreaView>
   );
 };
